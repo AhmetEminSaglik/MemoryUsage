@@ -28,5 +28,13 @@ public class MemoryUsage {
         return Utility.divide(usedMemory, 3);
     }
 
-
+    @Override
+    public String toString() {
+        return "MemoryUsage{" +
+                "{Byte="+getUsedMemoryByte()+'}'+
+                ",{KB:"+getUsedMemoryKB()+'}'+
+                ",{MB:"+getUsedMemoryMB()+'}'+
+                ",{GB:"+getUsedMemoryGB()+'}'+
+                '}';
+    }
 }

@@ -6,12 +6,11 @@ public class MemoryUsage {
     private long beforeUsedMemory, afterUsedMemory, usedMemory;
 
     public void calculateMemoryBeforeProcess() {
-        beforeUsedMemory = Utility.calculateFreeMemory();//100
+        beforeUsedMemory = Utility.calculateFreeMemory();
     }
 
     public void calculateMemoryAfterProcess() {
-        afterUsedMemory = Utility.calculateFreeMemory();//90
-//        usedMemory = afterUsedMemory - beforeUsedMemory;
+        afterUsedMemory = Utility.calculateFreeMemory();
         usedMemory = beforeUsedMemory - afterUsedMemory;
     }
 

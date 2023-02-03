@@ -1,5 +1,7 @@
 package org.ahmeteminsaglik;
 
+import org.ahmeteminsaglik.readableformat.ReadableFormat;
+
 public class MemoryUsage {
     private long beforeUsedMemory, afterUsedMemory, usedMemory;
 
@@ -9,7 +11,7 @@ public class MemoryUsage {
 
     public void calculateMemoryAfterProcess() {
         afterUsedMemory = Utility.calculateFreeMemory();
-        usedMemory = afterUsedMemory - beforeUsedMemory;
+        usedMemory = beforeUsedMemory - afterUsedMemory;
     }
 
     public long getUsedMemoryByte() {
@@ -31,10 +33,10 @@ public class MemoryUsage {
     @Override
     public String toString() {
         return "MemoryUsage{" +
-                "{Byte="+getUsedMemoryByte()+'}'+
-                ",{KB:"+getUsedMemoryKB()+'}'+
-                ",{MB:"+getUsedMemoryMB()+'}'+
-                ",{GB:"+getUsedMemoryGB()+'}'+
+                "{Byte=" + ReadableFormat.getStringValue(getUsedMemoryByte()) + '}' +
+                ",{KB:" + ReadableFormat.getStringValue(getUsedMemoryKB()) + '}' +
+                ",{MB:" + ReadableFormat.getStringValue(getUsedMemoryMB()) + '}' +
+                ",{GB:" + ReadableFormat.getStringValue(getUsedMemoryGB()) + '}' +
                 '}';
     }
 }
